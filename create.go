@@ -11,7 +11,7 @@ import (
 	"gorm.io/gorm/clause"
 	"gorm.io/gorm/schema"
 
-	"github.com/wdrabbit/gorm-oracle/clauses"
+	"github.com/DeteMin/gorm-oracle/clauses"
 )
 
 func Create(db *gorm.DB) {
@@ -134,7 +134,7 @@ func Create(db *gorm.DB) {
 							func(field *schema.Field) {
 								//if err = field.Set(insertTo, stmt.Vars[boundVars[field.Name]].(sql.Out).Dest); err != nil {
 								//@daojixing
-								if err = field.Set(stmt.Context,insertTo, stmt.Vars[boundVars[field.Name]].(sql.Out).Dest); err != nil {
+								if err = field.Set(stmt.Context, insertTo, stmt.Vars[boundVars[field.Name]].(sql.Out).Dest); err != nil {
 									db.AddError(err)
 								}
 							},

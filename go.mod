@@ -1,4 +1,4 @@
-module github.com/wdrabbit/gorm-oracle
+module github.com/DeteMin/gorm-oracle
 
 go 1.17
 
